@@ -1,6 +1,6 @@
 # PadangFood Classifier
 
-![PadangFood Classifier Banner](https://via.placeholder.com/800x200?text=PadangFood+Classifier)
+![PadangFood Classifier Banner](<ayam_goreng(30).jpg>)
 
 ## Deskripsi
 
@@ -15,6 +15,8 @@ PadangFood Classifier adalah aplikasi berbasis web yang menggunakan Convolutiona
 - **Antarmuka Ramah Pengguna**: Desain sederhana dan intuitif untuk semua pengguna
 
 ## Kategori Makanan
+
+Model pada aplikasi ini dilatih dari datasets [Padang Cuisine (Indonesian Food Image Dataset)](https://www.kaggle.com/datasets/faldoae/padangfood?utm_source=chatgpt.com)
 
 Model dapat mengidentifikasi jenis makanan Padang berikut:
 
