@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Klasifikasi PadangFood - CNN Model</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0"></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1><i class="fas fa-utensils"></i> PadangFood Classifier</h1>
+        <p>Klasifikasi makanan khas Padang menggunakan CNN</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="upload-section">
+        <h2>Unggah Gambar Makanan</h2>
+        <div class="upload-container">
+          <div class="upload-area" id="dropArea">
+            <div class="upload-content" id="uploadContent">
+              <i class="fas fa-cloud-upload-alt"></i>
+              <p>Klik atau seret gambar ke sini</p>
+              <span class="small">Format yang didukung: JPG, JPEG, PNG</span>
+            </div>
+            <input type="file" id="imageUpload" accept="image/*" hidden />
+            <div
+              class="preview-container"
+              id="previewContainer"
+              style="display: none"
+            >
+              <img id="imagePreview" src="" alt="Preview" />
+              <button class="clear-btn" id="clearButton">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+          <div class="camera-option">
+            <button id="cameraButton" class="camera-btn">
+              <i class="fas fa-camera"></i> Gunakan Kamera
+            </button>
+            <video id="cameraPreview" style="display: none" autoplay></video>
+            <button
+              id="captureButton"
+              style="display: none"
+              class="capture-btn"
+            >
+              <i class="fas fa-camera"></i> Ambil Foto
+            </button>
+            <button
+              id="switchCameraButton"
+              style="display: none"
+              class="switch-btn"
+            >
+              <i class="fas fa-sync-alt"></i> Ganti Kamera
+            </button>
+          </div>
+        </div>
+        <div class="button-container">
+          <button id="classifyButton" class="classify-btn" disabled>
+            <i class="fas fa-search"></i> Klasifikasi
+          </button>
+        </div>
+      </section>
+
+      <section
+        class="loading-section"
+        id="loadingSection"
+        style="display: none"
+      >
+        <div class="loader"></div>
+        <p id="loadingText">Memuat model...</p>
+      </section>
+
+      <section class="result-section" id="resultSection" style="display: none">
+        <h2>Hasil Klasifikasi</h2>
+        <div class="result-container">
+          <div class="result-image">
+            <img id="resultImage" src="" alt="Hasil Klasifikasi" />
+          </div>
+          <div class="result-details">
+            <div class="result-name">
+              <h3>Makanan terdeteksi:</h3>
+              <h2 id="resultName">-</h2>
+            </div>
+            <div class="confidence-bar">
+              <div class="confidence-level">
+                <span>Tingkat Keyakinan:</span>
+                <span id="confidenceValue">0%</span>
+              </div>
+              <div class="progress-bar">
+                <div
+                  id="confidenceBar"
+                  class="progress"
+                  style="width: 0%"
+                ></div>
+              </div>
+            </div>
+            <div class="other-predictions" id="otherPredictions">
+              <h4>Kemungkinan lainnya:</h4>
+              <ul id="predictionsList"></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section">
+        <h2>Tentang PadangFood Classifier</h2>
+        <div class="about-content">
+          <p>
+            Aplikasi ini menggunakan model Convolutional Neural Network (CNN)
+            yang dilatih menggunakan dataset makanan khas Padang. Model ini
+            dapat mengklasifikasikan berbagai jenis makanan Padang dengan
+            tingkat akurasi yang tinggi.
+          </p>
+          <p>Teknologi yang digunakan:</p>
+          <ul class="tech-list">
+            <li><i class="fab fa-tensorflow"></i> TensorFlow.js</li>
+            <li><i class="fab fa-js"></i> JavaScript</li>
+            <li><i class="fab fa-html5"></i> HTML5</li>
+            <li><i class="fab fa-css3-alt"></i> CSS3</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>
+          &copy; 2025 PadangFood Classifier. Dibuat dengan
+          <i class="fas fa-heart"></i>
+        </p>
+      </div>
+    </footer>
+
+    <div class="modal" id="cameraModal">
+      <div class="modal-content">
+        <span class="close-modal" id="closeModal">&times;</span>
+        <h2>Ambil Foto</h2>
+        <video id="modalCamera" autoplay></video>
+        <canvas id="cameraCanvas" style="display: none"></canvas>
+        <div class="camera-controls">
+          <button id="modalCaptureButton" class="capture-btn">
+            <i class="fas fa-camera"></i> Ambil Foto
+          </button>
+          <button id="modalSwitchButton" class="switch-btn">
+            <i class="fas fa-sync-alt"></i> Ganti Kamera
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
