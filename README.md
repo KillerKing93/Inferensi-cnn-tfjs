@@ -85,7 +85,8 @@ Inferensi-cnn-tfjs/
 
 ### Demo Online
 
-Kunjungi [demo-link]((https://craftthingy.com/inference-tfjs-cnn/) untuk mencoba aplikasi tanpa instalasi.
+Kunjungi [demo-link](https://craftthingy.com/inference-tfjs-cnn/) untuk mencoba aplikasi tanpa instalasi.
+Link GitHub Demo: [PadangFood Classifier](https://github.com/KillerKing93/Inferensi-cnn-tfjs?authuser=5)
 
 ## Cara Kerja
 
