@@ -85,7 +85,7 @@ Inferensi-cnn-tfjs/
 
 ### Demo Online
 
-Kunjungi [demo-link](#) untuk mencoba aplikasi tanpa instalasi.
+Kunjungi [demo-link]((https://craftthingy.com/inference-tfjs-cnn/) untuk mencoba aplikasi tanpa instalasi.
 
 ## Cara Kerja
 
